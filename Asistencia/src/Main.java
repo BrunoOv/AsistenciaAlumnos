@@ -26,10 +26,28 @@ public class Main {
         System.out.println("Fuera de servicio xd");
         }
         if(op==3){
+            System.out.println("Asitencia 1 Falta 0");
+            iterator= listaAlumnos.keySet().iterator();
+        while (iterator.hasNext()){
 
+            String key = (String) iterator.next();
+            System.out.println(key +" "+listaAlumnos.get(key).getName());
+            op=in.nextInt();
+            if(op==1){
+                int aux=listaAlumnos.get(key).getAsistencia();
+                aux++;
+                listaAlumnos.get(key).setAsistencia(aux);
+            }else {
+                int aux=listaAlumnos.get(key).getFaltas();
+                aux++;
+                listaAlumnos.get(key).setFaltas(aux);
+            }
+        }
+        op=3;
         }
         if(op==4){
             System.out.println("Apellido   Nombre  Asistencia  Faltas");
+            iterator= listaAlumnos.keySet().iterator();
             while(iterator.hasNext()){
                 String key = (String) iterator.next();
                 System.out.println(key+ "      "+ listaAlumnos.get(key).getName()+"       "+ listaAlumnos.get(key).getAsistencia()+"        "+listaAlumnos.get(key).getFaltas() );
