@@ -10,6 +10,10 @@ public class Main {
     int op=1;
     Iterator iterator= listaAlumnos.keySet().iterator();
     Scanner in = new Scanner(System.in);
+        alumno neww=new alumno("Bruno","Ovalle",0,0);
+        listaAlumnos.put("Ovalle",neww);
+        neww=new alumno("Alex","Martinez",0,0);
+        listaAlumnos.put("Martinez",neww);
     while(op!=0){
         System.out.println("Elija una opcion :\n1.Agregar Alumno\n2.Eliminar Alumno\n3.Tomar Asistencia\n4.Ver Asistencias\nOP :  ");
         op= in.nextInt();
@@ -19,11 +23,14 @@ public class Main {
             lastName= in.next();
             System.out.println("Nombre:");
             name= in.next();
-            alumno neww=new alumno(name,lastName,0,0);
+            neww=new alumno(name,lastName,0,0);
             listaAlumnos.put(lastName,neww);
         }
         if(op==2){
-        System.out.println("Fuera de servicio xd");
+        System.out.println("Apellido : ");
+        String lastName;
+        lastName=in.next();
+        listaAlumnos.remove(lastName);
         }
         if(op==3){
             System.out.println("Asitencia 1 Falta 0");
